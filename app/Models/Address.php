@@ -11,7 +11,7 @@ class Address extends Model
         'first_name',
         'last_name',
         'phone',
-        'street_address',
+        'street_address', //direccion de la calle
         'city',
         'state',
         'zip_code',
