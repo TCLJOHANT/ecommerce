@@ -31,10 +31,14 @@ use Illuminate\Support\Number;
 class OrderResource extends Resource
 {
     protected static ?string $label = 'Ordenes';
-
+    
     protected static ?string $model = Order::class;
-
+    
     protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
+    
+    protected static ?string $navigationGroup = 'Compras';
+
+    protected static ?int $navigationSort = 5; //pocicion en le menu de la barra de navegacion
 
     public static function form(Form $form): Form
     {

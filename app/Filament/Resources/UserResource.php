@@ -17,8 +17,12 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
+    protected static ?string $label = 'Usuarios';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $recordTitleAttribute = 'name'; // se usa para el buscador global 
+
+    protected static ?int $navigationSort = 1; //pocicion en le menu de la barra de navegacion
 
     public static function form(Form $form): Form
     {
@@ -85,6 +89,13 @@ class UserResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
+    }
+
+      // se usa para el buscador global multiple
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['name','email'];
     }
 
     public static function getRelations(): array

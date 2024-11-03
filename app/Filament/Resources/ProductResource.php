@@ -24,10 +24,14 @@ use Illuminate\Support\Str;
 class ProductResource extends Resource
 {
     protected static ?string $label = 'Productos';
-
+    
     protected static ?string $model = Product::class;
-
+    
     protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
+    
+    protected static ?string $navigationGroup = 'Compras';
+    
+    protected static ?int $navigationSort = 4; //pocicion en le menu de la barra de navegacion
 
     public static function form(Form $form): Form
     {

@@ -27,6 +27,8 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
+    protected static ?int $navigationSort = 3; //pocicion en le menu de la barra de navegacion
+
     public static function form(Form $form): Form
     {
         return $form->schema([
@@ -61,18 +63,18 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
+                    ->searchable()->label('Nombre'),
+                Tables\Columns\ImageColumn::make('image')->label('Imagen'),
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
+                    ->boolean()->label('Activo'),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
+                    ->dateTime()->label('Creado el')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->dateTime()->label('Actualizado el')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
