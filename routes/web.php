@@ -14,21 +14,32 @@ use App\Livewire\MyOrdersPage;
 use App\Livewire\ProductDetailPage;
 use App\Livewire\ProductsPage;
 use App\Livewire\SuccessPage;
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\Rules\Can;
 
 Route::get('/', HomePage::class)->name('home');
-Route::get('login', LoginPage::class);
-Route::get('register', RegisterPage::class);
-Route::get('forgot', ForgotPasswordPage::class);
-Route::get('reset', ResetPasswordPage::class);
 
 Route::get('categories', CategoriesPage::class);
 Route::get('products', ProductsPage::class);
 Route::get('cart', CartPage::class);
 Route::get('products/{slug}', ProductDetailPage::class);
-Route::get('checkout',CheckoutPage::class);
-Route::get('my-orders',MyOrdersPage::class);
-Route::get('my-orders/{order}',MyOrderDetailPage::class); 
-Route::get('cancel', CancelPage::class);
-Route::get('success', SuccessPage::class);
+
+Route::middleware('guest')->group(function () {
+    Route::get('login', LoginPage::class)->name('login');
+    Route::get('register', RegisterPage::class);
+    Route::get('forgot', ForgotPasswordPage::class);
+    Route::get('reset', ResetPasswordPage::class);
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('logout', function () {
+        auth()->logout();
+        return redirect('/');
+    });
+    Route::get('checkout',CheckoutPage::class);
+    Route::get('my-orders',MyOrdersPage::class);
+    Route::get('my-orders/{order}',MyOrderDetailPage::class); 
+    Route::get('cancel', CancelPage::class);
+    Route::get('success', SuccessPage::class);
+});

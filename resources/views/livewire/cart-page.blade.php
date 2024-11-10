@@ -51,7 +51,7 @@
             </div>
             <div class="md:w-1/4">
                 <div class="bg-white rounded-lg shadow-md p-6">
-                    <h2 class="text-lg font-semibold mb-4">Summary</h2>
+                    <h2 class="text-lg font-semibold mb-4">Resumen</h2>
                     <div class="flex justify-between mb-2">
                         <span>Subtotal</span>
                         <span>{{Number::currency($gran_total,'COL')}}</span>
@@ -70,7 +70,7 @@
                         <span class="font-semibold">{{Number::currency($gran_total,'COL')}}</span>
                     </div>
                     @if ($cart_items)
-                        <button class="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</button>
+                        <a href="/checkout" wire:navigate class="bg-blue-500 block text-center text-white py-2 px-4 rounded-lg mt-4 w-full">Continuar</a>
                     @endif
                 </div>
             </div>
