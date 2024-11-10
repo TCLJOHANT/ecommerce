@@ -125,7 +125,7 @@ class CartManagement {
     }
 
     //calcular el total del carro
-    static public function calculateTotal(array $items) {
+    static public function calculateGrandTotal(array $items) {
         return array_sum(array_column($items,'total_amount'));
     }
 }
