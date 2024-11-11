@@ -14,7 +14,7 @@ class LoginPage extends Component
     {
         $this->validate([
             'email' => 'required|string|email|max:255|exists:users,email',
-            'password' => 'required|string|min:8|max:255',
+            'password' => 'required|string|max:255',
         ]);
         if(!auth()->attempt(['email' => $this->email, 'password' => $this->password])){
             session()->flash('error', 'Email o contraseña incorrectos');

@@ -30,13 +30,17 @@ use Illuminate\Support\Number;
 
 class OrderResource extends Resource
 {
-    protected static ?string $label = 'Ordenes';
+    //protected static ?string $label = 'Ordenes';
     
     protected static ?string $model = Order::class;
     
     protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
     
     protected static ?string $navigationGroup = 'Compras';
+
+    protected static ?string $modelLabel = 'Orden';
+
+    protected static ?string $pluralLabel = 'Ordenes';
 
     protected static ?int $navigationSort = 5; //pocicion en le menu de la barra de navegacion
 
@@ -78,13 +82,13 @@ class OrderResource extends Resource
                                 ->default('col'),
                             Select::make('shipping_method')
                                 ->label('Metodo de Envío')
-                                ->required()
-                                ->options(['fedex'=>'Fedex', 'usps'=>'USPS', 'ups'=>'UPS', 'dhl'=>'DHL'])
-                                ->default('usps'),
+                                //->required()
+                                ->options(['fedex'=>'Fedex', 'usps'=>'USPS', 'ups'=>'UPS', 'dhl'=>'DHL']),
+                                //->default('usps'),
                             Textarea::make('notes')
                                 ->columnSpanFull()
                                 ->label('Notas'),
-                    ])->columnSpanFull(),
+                    ])->columns(2),
 
                     //Forms\Components\TextInput::make('shipping_amount')
                     //   ->numeric(),

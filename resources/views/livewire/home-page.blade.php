@@ -7,15 +7,16 @@
                 <div>
                     <h1
                         class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
-                        Start your journey with <span class="text-blue-600">DCodeMania</span></h1>
-                    <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">Purchase wide varities of electronics
-                        products like Smartphones, Laptops, Smartwatches, Television and many more.</p>
+                        Comienza una aventura con <span class="text-blue-600">Ecommerce</span></h1>
+                    <p class="mt-3 text-lg text-gray-800 dark:text-gray-400">
+                        Compre una amplia variedad de productos electrónicos como teléfonos inteligentes, computadoras portátiles, relojes inteligentes, televisores y muchos más.
+                    </p>
 
                     <!-- Buttons -->
                     <div class="mt-7 grid gap-3 w-full sm:inline-flex">
                         <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                             href="/register">
-                            Get started
+                            Empezar
                             <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                 height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -24,7 +25,7 @@
                         </a>
                         <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                             href="/contact">
-                            Contact sales team
+                            Contactar con el equipo de ventas
                         </a>
                     </div>
                     <!-- End Buttons -->
@@ -203,8 +204,8 @@
         <div class="max-w-xl mx-auto">
             <div class="text-center ">
                 <div class="relative flex flex-col items-center">
-                    <h1 class="text-5xl font-bold dark:text-gray-200"> Browse Popular<span class="text-blue-500">
-                            Brands
+                    <h1 class="text-5xl font-bold dark:text-gray-200"> Explorar<span class="text-blue-500">
+                            Marcas Populares
                         </span> </h1>
                     <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
                         <div class="flex-1 h-2 bg-blue-200">
@@ -216,9 +217,7 @@
                     </div>
                 </div>
                 <p class="mb-12 text-base text-center text-gray-500">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus magni eius eaque?
-                    Pariatur
-                    numquam, odio quod nobis ipsum ex cupiditate?
+                    El propio cliente, el cliente, podrá perseguir el adipisamiento de la empresa. ¿Su gran elegido? ¿Nunca nos reconciliaremos, que nos odiamos por deseo?
                 </p>
             </div>
         </div>
@@ -247,7 +246,7 @@
         <div class="max-w-xl mx-auto">
             <div class="text-center ">
                 <div class="relative flex flex-col items-center">
-                    <h1 class="text-5xl font-bold dark:text-gray-200"> Browse <span class="text-blue-500"> Categories
+                    <h1 class="text-5xl font-bold dark:text-gray-200"> Explorar por<span class="text-blue-500"> Categorias
                         </span> </h1>
                     <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
                         <div class="flex-1 h-2 bg-blue-200">
@@ -307,8 +306,8 @@
             <div class="max-w-xl mx-auto">
                 <div class="text-center ">
                     <div class="relative flex flex-col items-center">
-                        <h1 class="text-5xl font-bold dark:text-gray-200"> Customer <span class="text-blue-500">
-                                Reviews
+                        <h1 class="text-5xl font-bold dark:text-gray-200">La Opinion <span class="text-blue-500">
+                                de nuetros clientes
                             </span> </h1>
                         <div class="flex w-40 mt-2 mb-6 overflow-hidden rounded">
                             <div class="flex-1 h-2 bg-blue-200">
@@ -346,8 +345,7 @@
                         </p>
                     </div>
                     <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
-                        iure minus sed fugit obcaecati minima quam reiciendis dicta!
+                        ¡Excelente experiencia! El servicio al cliente fue increíble y el producto superó mis expectativas. Definitivamente volveré a comprar y lo recomendaré a mis amigos.
                     </p>
                     <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
                         <div class="flex px-6 mb-2 md:mb-0">
@@ -401,7 +399,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <h2 class="text-sm text-gray-500 dark:text-gray-400">Rating:<span
+                            <h2 class="text-sm text-gray-500 dark:text-gray-400">Clasificación:<span
                                     class="font-semibold text-gray-600 dark:text-gray-300">
                                     3.0</span>
                             </h2>
@@ -454,8 +452,7 @@
                         </p>
                     </div>
                     <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
-                        iure minus sed fugit obcaecati minima quam reiciendis dicta!
+                        Muy contenta con la calidad del producto y la atención al cliente. Definitivamente lo recomendaría.
                     </p>
                     <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
                         <div class="flex px-6 mb-2 md:mb-0">
@@ -509,7 +506,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <h2 class="text-sm text-gray-500 dark:text-gray-400">Rating:<span
+                            <h2 class="text-sm text-gray-500 dark:text-gray-400">Clasificación:<span
                                     class="font-semibold text-gray-600 dark:text-gray-300">
                                     3.0</span>
                             </h2>
@@ -560,8 +557,7 @@
                         </p>
                     </div>
                     <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
-                        iure minus sed fugit obcaecati minima quam reiciendis dicta!
+                        La velocidad de entrega fue impresionante. Recibí mi pedido en tiempo récord, y el producto llegó en perfectas condiciones.
                     </p>
                     <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
                         <div class="flex px-6 mb-2 md:mb-0">
@@ -615,7 +611,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <h2 class="text-sm text-gray-500 dark:text-gray-400">Rating:<span
+                            <h2 class="text-sm text-gray-500 dark:text-gray-400">Clasificación:<span
                                     class="font-semibold text-gray-600 dark:text-gray-300">
                                     3.0</span>
                             </h2>
@@ -666,8 +662,7 @@
                         </p>
                     </div>
                     <p class="px-6 mb-6 text-base text-gray-500 dark:text-gray-400">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate similique,
-                        iure minus sed fugit obcaecati minima quam reiciendis dicta!
+                        Una experiencia de compra en línea rápida y sencilla. La plataforma es muy fácil de usar y el proceso de pago fue seguro.
                     </p>
                     <div class="flex flex-wrap justify-between pt-4 border-t dark:border-gray-700">
                         <div class="flex px-6 mb-2 md:mb-0">
@@ -721,7 +716,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            <h2 class="text-sm text-gray-500 dark:text-gray-400">Rating:<span
+                            <h2 class="text-sm text-gray-500 dark:text-gray-400">Clasificación:<span
                                     class="font-semibold text-gray-600 dark:text-gray-300">
                                     3.0</span>
                             </h2>

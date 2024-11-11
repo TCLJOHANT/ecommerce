@@ -18,7 +18,7 @@ class OrderStats extends BaseWidget
             //Stat::make('Pendientes', Order::Query()->where('status', 'pending')->count()),
             Stat::make('Procesando', Order::Query()->where('status', 'processing')->count()),
             Stat::make('Enviadas', Order::Query()->where('status', 'shipped')->count()),
-            Stat::make('precio medio',Number::currency(Order::Query()->avg('grand_total'), 'COL')),
+            Stat::make('Precio Promedio',Number::currency(Order::Query()->avg('grand_total') ?? 0, 'COL')),
             //Stat::make('Entregadas', Order::Query()->where('status', 'delivered')->count()),
             //Stat::make('Canceladas', Order::Query()->where('status', 'canceled')->count()),
         ];

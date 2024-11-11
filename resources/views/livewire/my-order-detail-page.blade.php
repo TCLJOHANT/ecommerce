@@ -1,5 +1,5 @@
 <div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
-    <h1 class="text-4xl font-bold text-slate-500">Order Details</h1>
+    <h1 class="text-4xl font-bold text-slate-500">Detalles de la orden</h1>
 
     <!-- Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-5">
@@ -21,11 +21,11 @@
                 <div class="grow">
                     <div class="flex items-center gap-x-2">
                         <p class="text-xs uppercase tracking-wide text-gray-500">
-                            Customer
+                            Cliente
                         </p>
                     </div>
                     <div class="mt-1 flex items-center gap-x-2">
-                        <div>Jace Grimes</div>
+                        <div>{{$address->full_name}}</div>
                     </div>
                 </div>
             </div>
@@ -51,12 +51,12 @@
                 <div class="grow">
                     <div class="flex items-center gap-x-2">
                         <p class="text-xs uppercase tracking-wide text-gray-500">
-                            Order Date
+                            Fecha de la orden
                         </p>
                     </div>
                     <div class="mt-1 flex items-center gap-x-2">
                         <h3 class="text-xl font-medium text-gray-800 dark:text-gray-200">
-                            17-02-2024
+                            {{$order_items[0]->created_at->format('d-m-Y')}}
                         </h3>
                     </div>
                 </div>
@@ -81,11 +81,31 @@
                 <div class="grow">
                     <div class="flex items-center gap-x-2">
                         <p class="text-xs uppercase tracking-wide text-gray-500">
-                            Order Status
+                            Estado de la orden
                         </p>
                     </div>
                     <div class="mt-1 flex items-center gap-x-2">
-                        <span class="bg-yellow-500 py-1 px-3 rounded text-white shadow">Processing</span>
+                        @php
+                            $status = '';
+                            $status = match ($order->status) {
+                                'new' => '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">
+                                                    Nuevo
+                                                </span>',
+                                'processing' => '<span class="bg-yellow-500 py-1 px-3 rounded text-white shadow">
+                                                Prosesando
+                                                </span>',
+                                'shipped' => '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">
+                                                Pagado
+                                                </span>',
+                                'delivered' => '<span class="bg-green-700 py-1 px-3 rounded text-white shadow">
+                                                Entregado
+                                                </span>',
+                                'canceled' => '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">
+                                                    Cancelado
+                                                </span>',
+                            };
+                        @endphp
+                        {!! $status !!}
                     </div>
                 </div>
             </div>
@@ -111,11 +131,25 @@
                 <div class="grow">
                     <div class="flex items-center gap-x-2">
                         <p class="text-xs uppercase tracking-wide text-gray-500">
-                            Payment Status
+                            Estado del pago
                         </p>
                     </div>
                     <div class="mt-1 flex items-center gap-x-2">
-                        <span class="bg-green-500 py-1 px-3 rounded text-white shadow">Paid</span>
+                        @php
+                            $payment_status = '';
+                            $payment_status = match ($order->payment_status) {
+                                'paid' => '<span class="bg-green-500 py-1 px-3 rounded text-white shadow">
+                                                    Pagado
+                                                </span>',
+                                'pending' => '<span class="bg-yellow-500 py-1 px-3 rounded text-white shadow">
+                                                    Pendiente
+                                                </span>',
+                                'failed' => '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">
+                                                    Fallido
+                                                </span>',
+                            };
+                        @endphp
+                        {!! $payment_status !!}
                     </div>
                 </div>
             </div>
@@ -130,60 +164,41 @@
                 <table class="w-full">
                     <thead>
                         <tr>
-                            <th class="text-left font-semibold">Product</th>
-                            <th class="text-left font-semibold">Price</th>
-                            <th class="text-left font-semibold">Quantity</th>
+                            <th class="text-left font-semibold">Producto</th>
+                            <th class="text-left font-semibold">Precio</th>
+                            <th class="text-left font-semibold">Cantiad</th>
                             <th class="text-left font-semibold">Total</th>
                         </tr>
                     </thead>
                     <tbody>
-
-                        <!--[if BLOCK]><![endif]-->
-                        <tr wire:key="53">
-                            <td class="py-4">
-                                <div class="flex items-center">
-                                    <img class="h-16 w-16 mr-4"
-                                        src="http://localhost:8000/storage/products/01HND3J5XS7ZC5J84BK5YDM6Z2.jpg"
-                                        alt="Product image">
-                                    <span class="font-semibold">Samsung Galaxy Watch6</span>
-                                </div>
-                            </td>
-                            <td class="py-4">₹29,999.00</td>
-                            <td class="py-4">
-                                <span class="text-center w-8">1</span>
-                            </td>
-                            <td class="py-4">₹29,999.00</td>
-                        </tr>
-                        <tr wire:key="54">
-                            <td class="py-4">
-                                <div class="flex items-center">
-                                    <img class="h-16 w-16 mr-4"
-                                        src="http://localhost:8000/storage/products/01HND30J0P7C6MWQ1XQK7YDQKA.jpg"
-                                        alt="Product image">
-                                    <span class="font-semibold">Samsung Galaxy Book3</span>
-                                </div>
-                            </td>
-                            <td class="py-4">₹75,000.00</td>
-                            <td class="py-4">
-                                <span class="text-center w-8">5</span>
-                            </td>
-                            <td class="py-4">₹375,000.00</td>
-                        </tr>
-                        <!--[if ENDBLOCK]><![endif]-->
-
+                        @foreach($order_items as $order_item)
+                            <tr wire:key="{{$order_item->id}}">
+                                <td class="py-4">
+                                    <div class="flex items-center">
+                                        <img class="h-16 w-16 mr-4" src="{{url('storage',$order_item->product->images[0])}}" alt="{{$order_item->product->name}}">
+                                        <span class="font-semibold">{{$order_item->product->name}}</span>
+                                    </div>
+                                </td>
+                                <td class="py-4">{{Number::currency($order_item->unit_amount,'COL')}}</td>
+                                <td class="py-4">
+                                    <span class="text-center w-8">{{$order_item->quantity}}</span>
+                                </td>
+                                <td class="py-4">{{Number::currency($order_item->total_amount,'COL')}}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
 
             <div class="bg-white overflow-x-auto rounded-lg shadow-md p-6 mb-4">
-                <h1 class="font-3xl font-bold text-slate-500 mb-3">Shipping Address</h1>
+                <h1 class="font-3xl font-bold text-slate-500 mb-3">Dirección de envío</h1>
                 <div class="flex justify-between items-center">
                     <div>
-                        <p>42227 Zoila Glens, Oshkosh, Michigan, 55928</p>
+                        <p>{{$address->street_address}}, {{$address->city}}, {{$address->state}} {{$address->zip_code}}</p>
                     </div>
                     <div>
-                        <p class="font-semibold">Phone:</p>
-                        <p>023-509-0009</p>
+                        <p class="font-semibold">Telefono:</p>
+                        <p>{{$address->phone}}</p>
                     </div>
                 </div>
             </div>
@@ -191,23 +206,23 @@
         </div>
         <div class="md:w-1/4">
             <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-lg font-semibold mb-4">Summary</h2>
+                <h2 class="text-lg font-semibold mb-4">Resumen</h2>
                 <div class="flex justify-between mb-2">
                     <span>Subtotal</span>
-                    <span>₹404,999.00</span>
+                    <span>{{Number::currency($order->grand_total,'COL')}}</span>
                 </div>
                 <div class="flex justify-between mb-2">
                     <span>Taxes</span>
-                    <span>₹0.00</span>
+                    <span>{{Number::currency(0,'COL')}}</span>
                 </div>
                 <div class="flex justify-between mb-2">
                     <span>Shipping</span>
-                    <span>₹0.00</span>
+                    <span>{{Number::currency(0,'COL')}}</span>
                 </div>
                 <hr class="my-2">
                 <div class="flex justify-between mb-2">
                     <span class="font-semibold">Grand Total</span>
-                    <span class="font-semibold">₹404,999.00</span>
+                    <span class="font-semibold">{{Number::currency($order->grand_total,'COL')}}</span>
                 </div>
 
             </div>

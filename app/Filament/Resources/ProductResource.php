@@ -30,6 +30,10 @@ class ProductResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
     
     protected static ?string $navigationGroup = 'Compras';
+
+    protected static ?string $modelLabel = 'Producto';
+
+    protected static ?string $pluralLabel = 'Productos';
     
     protected static ?int $navigationSort = 4; //pocicion en le menu de la barra de navegacion
 

@@ -3,8 +3,8 @@
         <div class="px-4 py-4 mx-auto max-w-7xl lg:py-6 md:px-6">
             <div class="flex flex-wrap mb-24 -mx-3">
                 <div class="w-full pr-2 lg:w-1/4 lg:block">
-                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:border-gray-900 dark:bg-gray-900">
-                        <h2 class="text-2xl font-bold dark:text-gray-400"> Categories</h2>
+                    <div class="rounded p-4 mb-5 bg-white border border-gray-200 dark:border-gray-900 dark:bg-gray-900">
+                        <h2 class="text-2xl font-bold dark:text-gray-400"> Categorias</h2>
                         <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
                         <ul>
                             @foreach($categories as $category)
@@ -18,8 +18,8 @@
                         </ul>
 
                     </div>
-                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
-                        <h2 class="text-2xl font-bold dark:text-gray-400">Brand</h2>
+                    <div class="rounded p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
+                        <h2 class="text-2xl font-bold dark:text-gray-400">Marcas</h2>
                         <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
                         <ul>
                             @foreach($brands as $brand)
@@ -32,8 +32,8 @@
                             @endforeach
                         </ul>
                     </div>
-                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
-                        <h2 class="text-2xl font-bold dark:text-gray-400">Product Status</h2>
+                    <div class="rounded p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
+                        <h2 class="text-2xl font-bold dark:text-gray-400">Estado dle producto</h2>
                         <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
                         <ul>
                             <li class="mb-4">
@@ -45,14 +45,14 @@
                             <li class="mb-4">
                                 <label for="on_sale" class="flex items-center dark:text-gray-300">
                                     <input type="checkbox" id="on_sale" value="1" wire:model.live="on_sale" class="w-4 h-4 mr-2">
-                                    <span class="text-lg dark:text-gray-400">On Sale</span>
+                                    <span class="text-lg dark:text-gray-400">En venta</span>
                                 </label>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
-                        <h2 class="text-2xl font-bold dark:text-gray-400">Price</h2>
+                    <div class="rounded p-4 mb-5 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-900">
+                        <h2 class="text-2xl font-bold dark:text-gray-400">Precio</h2>
                         <div class="w-16 pb-2 mb-6 border-b border-rose-600 dark:border-gray-400"></div>
                         <div>
                             <div class="font-semibol">{{Number::currency($price_range,'COL')}}</div>
@@ -72,9 +72,9 @@
                             class="items-center justify-between hidden px-3 py-2 bg-gray-100 md:flex dark:bg-gray-900 ">
                             <div class="flex items-center justify-between">
                                 <select wire:model.live="sort"
-                                    class="block w-40 text-base bg-gray-100 cursor-pointer dark:text-gray-400 dark:bg-gray-900">
-                                    <option value="latest">Sort by latest</option>
-                                    <option value="price">Sort by Price</option>
+                                    class="rounded block w-50 text-base bg-gray-100 cursor-pointer dark:text-gray-400 dark:bg-gray-900">
+                                    <option value="latest">Ordenar por recientes</option>
+                                    <option value="price">Ordenar por precio</option>
                                 </select>
                             </div>
                         </div>
